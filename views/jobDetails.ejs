@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/css/jobDetail.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+<div class="container py-5">
+  <div class="row">
+    <!-- Job Info -->
+    <div class="col-md-7 mb-4">
+      <div class="card p-4 shadow-lg job-details-card">
+        <h2 class="text-warning mb-3"><%= job.jobdesignation %> <small class="text-light">at</small> <%= job.companyname %></h2>
+        
+        <ul class="list-unstyled text-light">
+          <li class="mb-2">
+            <i class="bi bi-layers-fill text-info me-2"></i> <strong>Category:</strong> <%= job.jobcategory %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-geo-alt-fill text-info me-2"></i> <strong>Location:</strong> <%= job.joblocation %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-currency-rupee text-info me-2 large-icon"></i> <strong>Salary:</strong> <%= job.salary %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-calendar-check text-info me-2"></i> <strong>Apply By:</strong> <%= job.applyBy %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-people-fill text-info me-2"></i> <strong>Openings:</strong> <%= job.openings %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-card-text text-info me-2"></i> <strong>Description:</strong> <%= job.description %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-clock-fill text-info me-2"></i> <strong>Posted:</strong> <%= job.jobPosted.toLocaleString() %>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-lightning-charge text-info me-2"></i>
+            <strong>Skills:</strong>
+            <div class="mt-2">
+              <% job.skills.forEach(skill => { %>
+                <span class="badge bg-info text-info-skill"><%= skill %></span>
+              <% }) %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Apply Form -->
+    <div class="col-md-5">
+      <div class="card p-4 shadow-lg bg-dark text-white">
+        <h4 class="mb-4 text-success">Apply for this Job</h4>
+
+        <% if (typeof success !== 'undefined' && success) { %>
+          <div class="alert alert-success"><%= success %></div>
+        <% } %>
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="alert alert-danger"><%= error %></div>
+        <% } %>
+
+        <form method="POST" action="/jobs/<%= job.id %>/apply" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Your Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Resume (PDF only)</label>
+            <input type="file" name="resume" class="form-control" accept="application/pdf" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100 mt-2">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

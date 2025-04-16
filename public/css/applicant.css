@@ -1,0 +1,32 @@
+.applicant-card-wrapper {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.applicant-muted-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.applicant-table thead th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.applicant-table td,
+.applicant-table th {
+  vertical-align: middle;
+}
+
+.applicant-table a.btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.applicant-action-btn {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}

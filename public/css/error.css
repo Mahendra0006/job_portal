@@ -1,0 +1,77 @@
+/* Container for the whole page */
+.error-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #130555, #1a3fa6);
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Image at the top */
+.error-image {
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  animation: bounceIn 1s ease-out;
+}
+
+/* Error Title (404) */
+.error-title {
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #ff6347; /* A vibrant red for contrast */
+}
+
+/* Error message */
+.error-message {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Button - Go Home */
+.go-home-btn {
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  background-color: #198754;
+  color: #fff;
+  border: 2px solid #198754;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.go-home-btn:hover {
+  background-color: #fff;
+  color: #198754;
+  border-color: #198754;
+}
+
+/* Bounce In animation for the image */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

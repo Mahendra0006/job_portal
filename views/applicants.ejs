@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/applicant.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+<div class="d-flex justify-content-center">
+  <div class="applicant-card-wrapper p-4 shadow-lg rounded-4 text-white w-100">
+    <h2 class="text-center mb-4">Applicants for <%= job.jobdesignation %> at <%= job.companyname %></h2>
+
+    <% if (applicants.length === 0) { %>
+      <p class="text-center applicant-muted-text">No applicants yet.</p>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table table-dark table-hover table-striped rounded-3 overflow-hidden applicant-table">
+          <thead class="table-light">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Resume</th>
+              <th>Applied At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% applicants.forEach(applicant => { %>
+              <tr>
+                <td><%= applicant.name %></td>
+                <td><%= applicant.email %></td>
+                <td>
+                  <a href="/uploads/<%= applicant.resume %>" target="_blank" class="btn btn-outline-light btn-sm">Download</a>
+                </td>
+                <td><%= applicant.appliedAt.toLocaleString() %></td>
+                <td>
+                  <div class="d-flex gap-2">
+                    <a href="/jobs/<%= job.id %>/applicants/<%= applicant.id %>" class="btn btn-info btn-sm applicant-action-btn">
+                      <i class="bi bi-eye-fill"></i>
+                    </a>
+                    <a href="/jobs/<%= job.id %>/applicants/<%= applicant.id %>/delete"
+                       class="btn btn-danger btn-sm applicant-action-btn"
+                       onclick="return confirm('Delete this applicant?')">
+                      <i class="bi bi-trash-fill"></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <nav class="d-flex justify-content-center mt-3">
+        <ul class="pagination pagination-sm">
+          <% for (let i = 1; i <= totalPages; i++) { %>
+            <li class="page-item <%= i === currentPage ? 'active' : '' %>">
+              <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+            </li>
+          <% } %>
+        </ul>
+      </nav>
+    <% } %>
+  </div>
+</div>

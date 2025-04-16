@@ -1,0 +1,229 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #130555;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.card {
+  background-color: #130555;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.card-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255 193 7);
+}
+
+.card-subtitle {
+  font-size: 1.2rem;
+  color: #d3d3d3 !important;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+}
+
+.card-body .badge {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+}
+/* Currency Icon Adjustments */
+.bi{
+  font-size: 20px;
+}
+/* Skills badge update */
+.card-body .badge.bg-info {
+  background-color: #130555 !important; /* same as body */
+  color: #ffffff;
+  border: 1px solid #0dcaf0;
+  padding: 10px 15px;
+  margin: 5px;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card-body .badge.bg-info:hover {
+  background-color: #0dcaf0 !important;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Buttons - slightly larger */
+.card-body a.btn {
+  font-size: 1.1rem;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.card-body a.btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #130555;
+  color: #198754; /* light green text */
+  border: 2px solid #198754; /* green border */
+  font-size: 20px;
+  font-weight: 200 !important;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.card-body a.btn:hover {
+  background-color: #198754;
+  color: #fff; /* lighter green text on hover */
+  border-color: #198754;
+  font-size: 20px;
+  font-weight: 200 !important;
+}
+.card-body .text-muted {
+  color: #ffffff !important;
+}
+
+.recruiter-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.recruiter-actions .btn {
+  width: auto !important;
+  min-width: 80px;
+  padding: 6px 12px !important;
+  font-size: 0.95rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.footer_container{
+  border: 1px solid #fff;
+  height: 1px;
+  width: 100%;
+}
+.footer_section{
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+   padding-top: 10px;
+   margin-top: 5px;
+}
+
+.pagination_conatiner {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px; /* gap between all pagination items */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pagination .page-item {
+  display: flex;
+}
+
+.pagination .page-link {
+  background: #2e5cff;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  margin: 0 2px;
+  min-width: 40px;
+  text-align: center;
+  transition: background 0.2s;
+  outline: none;
+}
+
+.pagination .page-item.active .page-link,
+.pagination .page-link:hover {
+  background: #1a3fa6;
+  color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+  pointer-events: none;
+  opacity: 0.5;
+  background: #888;
+}
+
+/* Add extra gap between arrows and page numbers */
+.pagination .arrow {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.pagination .arrow:first-child {
+  margin-left: 0;
+}
+.pagination .arrow:last-child {
+  margin-right: 0;
+}
+
+.last-visit-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #130555;
+  color: #fff;
+  border: 2px solid #198754;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.2);
+  font-weight: 500;
+}
+/* No jobs message */
+.no-jobs-message {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #130555;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+  animation: popOutEffect 1.2s ease-out forwards;
+  margin-top: 100px; /* Add some space above */
+}
+
+@keyframes popOutEffect {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+

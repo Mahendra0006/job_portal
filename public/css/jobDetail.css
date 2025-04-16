@@ -1,0 +1,32 @@
+.job-details-card {
+  background-color: #130555;
+  border: 2px solid #fff;
+  color: #ffffff;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.job-details-card:hover {
+  transform: scale(1.01);
+}
+
+.large-icon {
+  font-size: 1.4rem;
+}
+
+.text-info-skill {
+  color: #0dcaf0 !important;
+  background-color: transparent !important;
+  border: 1px solid #0dcaf0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.text-info-skill:hover {
+  background-color: #0dcaf0;
+  color: #fff !important;
+}

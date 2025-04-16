@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="/css/style.css" />
+<% if (jobs.length > 0) { %>
+<h2 class="text-white">All Jobs</h2>
+<div class="row">
+  <% jobs.forEach(job => { %>
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <!-- Job Status -->
+        <span class="badge bg-success">Actively hiring</span>
+        <!-- Job Designation -->
+        <h5 class="card-title"><%= job.jobdesignation %></h5>
+        <!-- Company Name -->
+        <h6 class="card-subtitle mb-2 text-muted"><%= job.companyname %></h6>
+        <!-- Job Location -->
+        <p class="card-text"><strong><i class="bi bi-geo-alt-fill"></i></strong><%= job.joblocation %></p>
+        <!-- Salary -->
+        <p class="card-text salary-line">
+          <strong><i class="bi bi-currency-rupee"></i></strong>
+          <%= job.salary %>
+        </p>
+        <!-- Skills -->
+        <p class="card-text"><strong>Skills:</strong></p>
+        <div>
+          <% job.skills.forEach(skill => { %>
+          <span class="badge bg-info"><%= skill %></span>
+          <% }) %>
+        </div>
+        <!-- Posting Date -->
+        <p class="card-text">
+          <small class="text-muted"
+            >Posted on: <%= job.jobPosted.toLocaleString() %></small
+          >
+        </p>
+        <!-- View Details Button -->
+        <% if (userId && job.recruiterId === userId) { %>
+          <div class="recruiter-actions">
+            <a href="/jobs/<%= job.id %>" class="btn btn-primary btn-sm">View details</a>
+            <a href="/jobs/<%= job.id %>/edit" class="btn btn-warning btn-sm" onclick="return confirm('Edit this job?')">Edit</a>
+            <a href="/jobs/<%= job.id %>/delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this job?')">Delete</a>
+            <a href="/jobs/<%= job.id %>/applicants" class="btn btn-info btn-sm">Applicants</a>
+          </div>
+        <% } else { %>
+          <a href="/jobs/<%= job.id %>" class="btn btn-info">View details</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
+
+<!-- Pagination -->
+<div class="pagination_conatiner">
+  <ul class="pagination">
+    <!-- Left Arrow -->
+    <li class="page-item arrow <%= currentPage <= 1 ? 'disabled' : '' %>">
+      <a
+        class="page-link"
+        href="?page=<%= currentPage - 1 %>"
+        tabindex="-1"
+        aria-disabled="<%= currentPage <= 1 %>"
+        >&laquo;</a
+      >
+    </li>
+    <!-- Page Numbers -->
+    <% for(let i = 1; i <= totalPages; i++) { %>
+    <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+      <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+    </li>
+    <% } %>
+    <!-- Right Arrow -->
+    <li class="page-item arrow <%= currentPage >= totalPages ? 'disabled' : '' %>">
+      <a
+        class="page-link"
+        href="?page=<%= currentPage + 1 %>"
+        aria-disabled="<%= currentPage >= totalPages %>"
+        >&raquo;</a
+      >
+    </li>
+  </ul>
+</div>
+<% } else { %>
+  <!-- No Jobs Message -->
+  <div class="no-jobs-message">
+    <h3>There are no jobs right now!</h3>
+  </div>
+<% } %>

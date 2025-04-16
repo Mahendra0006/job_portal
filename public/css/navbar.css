@@ -1,0 +1,95 @@
+/* === Glassmorphic Navbar === */
+.navbar-glass {
+  background: #130555;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(224, 204, 107, 0.08);
+  border-radius: 5px;
+  box-shadow: 0 8px 30px #130555;
+  border-bottom: 1px solid white;
+}
+
+/* Brand */
+.navbar-brand {
+  color: #ffffff;
+  font-size: 2rem; /* Larger brand */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: #dcdcdc;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00ffff;
+  font-size: 1.4rem;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 400px; /* Wider search bar */
+}
+
+.search-bar input[type="search"] {
+  background-color: #130555;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.search-bar input::placeholder {
+  color: #bbbbbb;
+}
+
+.search-bar .search-btn {
+  background-color: #ff2c90;
+  border-radius: 30px;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.search-bar .search-btn:hover {
+  background-color: #ff3b2f;
+}
+
+/* Logout Button */
+.logout-btn {
+  color: #ff9999 !important;
+}
+
+.logout-btn:hover {
+  color: #ff4444 !important;
+  text-decoration: underline;
+}
+
+.navbar-collapse{display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Responsive Padding */
+@media (max-width: 768px) {
+  .navbar-glass {
+    border-radius: 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}

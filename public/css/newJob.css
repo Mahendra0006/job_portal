@@ -1,0 +1,38 @@
+.login-page {
+  background: linear-gradient(135deg, #091540, #09216b);
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-card label {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.login-card input,
+.login-card textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease;
+}
+
+.login-card input:focus,
+.login-card textarea:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: #ffc107;
+  box-shadow: none;
+}
+
+.login-card .btn-warning {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
